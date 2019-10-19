@@ -1,10 +1,10 @@
 Algorithm:
 c(i,j) memoize subproblem values
 for j = 0 to n do
-c[0, j] 0;
+c[0, j] = 0;
 end
 for i = 1 to n do
-c[i, 0] 0;
+c[i, 0] = 0;
 for j = n to i + 1 do
     if A[i] == A[j] then
         c(i, j) = c(i − 1, j + 1) + 1;
