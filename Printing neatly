@@ -1,0 +1,20 @@
+badness(i, j) = (infinity, if page width > (sum of letters + spaces between the letters))
+badness(i,j) = (page_width - (sum of letters + spaces between the letters))^3
+The goal is to print neatly, that is., to minimize the space left at the end
+Subproblem : tj[i]
+i - line number
+j - word
+calculating tj[i], assuming we know all future values
+Algorithm:
+initialize all i in (0, ..., n-1) = infinity, split loc = []
+//Contains end of each line
+p = 0
+for i in n-1 to 0 do
+    for j in i+1 to n do
+        if tj[i] > badness(i, j) + tj[j] then
+            tj[i] = badness(i, j) + tj[j];
+            p = j;
+    end
+    split loc.append(p) if p is updated in this iteration
+end
+return (tj[0], split loc)
