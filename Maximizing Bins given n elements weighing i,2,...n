@@ -1,0 +1,14 @@
+Problem: Given that each bin should be filled with atleast L ounces and also given n
+elements with weights are W[1,...n], 
+
+
+Algorithm:
+if L > sum of all weights of elements in W:
+    return not possible
+else:
+    while(L < sum of all weights in elements in W):
+        Remove elements in descending order from W and add it in a box until >=L, 
+        such that removing lightest element makes the sum in the box less than L
+    if any element in W:
+        Add the remaining elements in previous box
+ 
